@@ -33,6 +33,7 @@
         </div>
     </nav>
     @yield('content')
+    @extends('auth.tableOfUser')
 </body>
 
 </html>
