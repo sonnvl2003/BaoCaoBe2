@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Hash;
-use Session;
 use App\Models\User;
-use Illuminate\Contracts\Session\Session as SessionSession;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash as FacadesHash;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 
 //Unknow
 class CustomAuthController extends Controller
@@ -81,14 +78,14 @@ class CustomAuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => FacadesHash::make($data['password']),
+            'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
             'image' => $data['image']
         ]);
     }
 
     public function signOut() {
-        SessionSession::flush();
+        // Session::flush();
         Auth::logout();
 
         return Redirect('login');
