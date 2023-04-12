@@ -19,7 +19,6 @@
                              <img src="{{ asset('/public/image/' . $user->image . '') }}" alt="profile Pic" height="200"
                                  width="200">
                          </td>
-                         j
                          <td>{{ $user->name }}</td>
                          <td>{{ $user->phone }}</td>
                          <td>{{ $user->email }}</td>
