@@ -1,5 +1,7 @@
 <div class="container">
     <div class="pagination-wrapper">
-        {{ $panigation->links() }}
+        @if (isset($panigation))
+            {{ $panigation->links() }}
+        @endIf
     </div>
 </div>
