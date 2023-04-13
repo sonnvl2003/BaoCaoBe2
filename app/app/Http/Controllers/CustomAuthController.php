@@ -16,7 +16,7 @@ class CustomAuthController extends Controller
         return view('auth.login');
     }
 
-
+    
     public function dashboard()
     {
         if (Auth::check()) {
