@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-//Unknow
 class CustomAuthController extends Controller
 {
     public function index()
@@ -96,4 +96,11 @@ class CustomAuthController extends Controller
         return Redirect('login');
     }
 
+
+    public function userDetail(Request $request){
+        $user = User::find($request->id);
+        return view('auth.userDetail',array(
+            "user"=>$user
+        ));
+    }
 }
