@@ -19,16 +19,15 @@ class CustomAuthController extends Controller
     
     public function dashboard()
     {
-        $panigation = User::paginate(3);
+        
         if (Auth::check()) {
+            $panigation = User::paginate(3);
             return view('dashboard',array(
                 "panigation"=> $panigation
             ));
         }
         
-        return view("login",array(
-            "panigation"=> $panigation
-        ));
+        return redirect("login")->withSuccess('Login details are not valid');
     }
 
     public function registration()

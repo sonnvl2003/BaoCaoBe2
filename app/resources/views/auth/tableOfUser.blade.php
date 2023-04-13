@@ -17,10 +17,10 @@
                     <tr>
                         <th scope="row">{{ $key + 1 }}</th>
                         <td>
-                            <img src="{{ asset('/public/image/' . $user->image . '') }}" alt="profile Pic" height="200"
-                                width="200">
+                            <img src="{{asset('image/'. $user->image .'')}}" alt="profile Pic" height="100"
+                                width="100">
                         </td>
-                        <td>{{ $user->name }}</td>
+                        <td><a href="http://127.0.0.1:8000/user/{{$user->id}}">{{ $user->name }}</a></td>
                         <td>{{ $user->phone }}</td>
                         <td>{{ $user->email }}</td>
                     </tr>
