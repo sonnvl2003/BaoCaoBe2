@@ -4,7 +4,7 @@
         <div class="card p-4">
             <div class=" image d-flex flex-column justify-content-center align-items-center">
                 <button class="btn btn-secondary">
-                    <img src="{{ asset('/public/image/' . $user->image . '') }}" alt="{{ $user->image }}" height="100" width="100" />
+                    <img src="{{asset('image/'. $user->image .'')}}" alt="{{ $user->image }}" height="100" width="100" />
                 </button>
                 <span class="name mt-3">{{ $user->name }}</span>
                 <div class="d-flex flex-row justify-content-center align-items-center gap-2">
