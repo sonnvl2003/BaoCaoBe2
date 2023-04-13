@@ -11,8 +11,8 @@
              </tr>
          </thead>
          <tbody>
-             @if ($users)
-                 @foreach ($users as $key => $user)
+             @if ($panigation)
+                 @foreach ($panigation as $key => $user)
                      <tr>
                          <th scope="row">{{ $key + 1 }}</th>
                          <td>
@@ -27,4 +27,5 @@
              @endIf
          </tbody>
      </table>
+     @extends('auth.paginationUser')
  </div>

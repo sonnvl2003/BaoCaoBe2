@@ -10,11 +10,8 @@ class CustomAuthController extends Controller
     public function dashboard()
     {
         //if (Auth::check()) {
-            $users = User::all();
-            $panigation = User::paginate(10);
-            dd($panigation);die;
+            $panigation = User::paginate(3);
             return view('dashboard',array(
-                "users"=>$users,
                 "panigation"=>$panigation
             ));
         //}
