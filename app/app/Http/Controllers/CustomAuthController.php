@@ -20,7 +20,10 @@ class CustomAuthController extends Controller
     public function dashboard()
     {
         if (Auth::check()) {
-            return view('dashboard');
+            $panigation = User::paginate(3);
+            return view('dashboard',array(
+                "panigation"=>$panigation
+            ));
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
